@@ -89,10 +89,13 @@
   <section id="result" class="hidden">
     <p class="eyebrow" data-i="resEyebrow">SCAN COMPLETE / IDENTITY DECODED</p>
     <h2 data-i="resTitle">IDENTITY <em>UNLOCKED.</em></h2>
+    <p class="scan-complete" data-i="scanComplete">SCAN COMPLETE</p>
     <div class="result">
       <article id="idcard" class="idcard">
         <div class="card-top"><small data-i="cardBrand">DEVELOPER.exe · GDG ASSIUT</small><small class="rec">● REC</small></div>
         <p class="class-label" data-i="cardLabel">YOUR DEVELOPER CLASS</p>
+        <div class="scan-stamp">DEVELOPER.exe / SYSTEM SCAN <span>● REC</span></div>
+        <div id="profileArt" class="profile-art" aria-hidden="true"></div>
         <div id="glyph" class="glyph" aria-hidden="true"></div>
         <h3 id="className" class="class-name"></h3>
         <p id="tagline" class="tagline"></p>
@@ -102,6 +105,7 @@
           <small data-i="dna">DNA MATRIX</small>
           <div id="dnaBars" class="dna-bars"></div>
         </div>
+        <div class="rare-skill"><small data-i="rare">RARE SKILL</small><b id="rareSkill"></b></div>
         <div class="pw">
           <div><small data-i="power">SPECIAL POWER</small><b id="power"></b></div>
           <div><small data-i="weakness">WEAKNESS</small><b id="weakness"></b></div>
