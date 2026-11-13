@@ -1,21 +1,158 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#070b09"><meta name="description" content="Discover your developer identity in the DEVELOPER.exe multiverse.">
-<meta property="og:title" content="DEVELOPER.exe — Discover Your Developer Identity"><meta property="og:description" content="Scan your developer DNA. Unlock your class. Enter the multiverse.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script>document.documentElement.classList.add("js")</script>
 <title>DEVELOPER.exe — GDG Assiut</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description" content="Discover your developer identity in the DEVELOPER.exe multiverse. Six questions, six classes, one shareable ID card.">
+<meta name="theme-color" content="#070b09">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://abdooraby21.github.io/DEVELOPER.exe/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23070b09'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' text-anchor='middle' fill='%2322c55e'%3E%26gt;_%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DEVELOPER.exe × GDG Assiut">
+<meta property="og:title" content="DEVELOPER.exe — Discover Your Developer Identity">
+<meta property="og:description" content="Scan your developer DNA. Unlock your class. Enter the multiverse.">
+<meta property="og:url" content="https://abdooraby21.github.io/DEVELOPER.exe/">
+<meta property="og:image" content="https://abdooraby21.github.io/DEVELOPER.exe/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DEVELOPER.exe — Which developer are you?">
+<meta name="twitter:description" content="6 questions. 6 classes. 1 shareable ID card.">
+<meta name="twitter:image" content="https://abdooraby21.github.io/DEVELOPER.exe/og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="scanlines"></div><header><a class="brand" href="#">>_ DEVELOPER<span>.exe</span></a><div><i class="online"></i><span data-i="online">SYSTEM ONLINE</span> <button id="lang">عربي</button></div></header>
+<a class="skip" href="#quiz" data-i="skip">Skip to the quiz</a>
+<canvas id="rain" aria-hidden="true"></canvas>
+
+<header>
+  <a class="brand" href="#home" aria-label="DEVELOPER.exe">&gt;_ DEVELOPER<span>.exe</span></a>
+  <div class="head-right">
+    <span class="status"><i class="online"></i><span data-i="online">SYSTEM ONLINE</span></span>
+    <button type="button" id="lang" aria-label="Switch language / تغيير اللغة">عربي</button>
+  </div>
+</header>
+
+<noscript><p class="noscript">DEVELOPER.exe needs JavaScript to run the scan. · هذا الموقع يحتاج JavaScript ليعمل.</p></noscript>
+
 <main>
-<section class="hero" id="home"><div><p class="eyebrow">GDG ASSIUT COMMUNITY EXPERIMENT / 001</p><h1 data-i="hero">YOUR CODE.<br><em>YOUR IDENTITY.</em></h1><p data-i="intro">Every developer has a hidden class. Run the scan, reveal your powers, and find your place in the multiverse.</p><button class="primary" id="start" data-i="start">INITIALIZE SCAN ↗</button><a class="link" href="#multiverse" data-i="explore">EXPLORE THE MULTIVERSE ↓</a><p class="meta">06 DEVELOPER CLASSES · ~60 SECONDS</p></div><div class="visual"><div class="orbit"></div><div class="core"><small>IDENTITY_SCAN · REC</small><strong>&lt;/&gt;</strong><span>DNA: UNKNOWN</span></div><b class="float f1">01001010</b><b class="float f2">CREATIVITY.exe</b></div></section>
-<section id="quiz" class="hidden"><p class="eyebrow">SCAN PROTOCOL / PERSONALITY ANALYSIS</p><h2 data-i="quizTitle">LET'S READ YOUR <em>DNA.</em></h2><div class="progress"><span id="progress"></span></div><p id="counter"></p><h3 id="question"></h3><div id="answers" class="answers"></div><button id="back" class="secondary">← BACK</button></section>
-<section id="result" class="hidden"><p class="eyebrow">SCAN COMPLETE / IDENTITY DECODED</p><h2>IDENTITY <em>UNLOCKED.</em></h2><div class="result"><article id="idcard"><small>DEVELOPER.exe · GDG ASSIUT</small><p class="class-label">YOUR DEVELOPER CLASS</p><div id="glyph" class="glyph">&lt;/&gt;</div><h2 id="className">THE BUG HUNTER</h2><p id="tagline"></p><p>LVL. <b id="level"></b> · <span id="code"></span></p><hr><p><small>SPECIAL POWER</small><br><b id="power"></b></p><p><small>WEAKNESS</small><br><b id="weakness"></b></p><small id="identity"></small></article><div><h3 id="headline"></h3><p id="description"></p><p id="traits"></p><button class="primary" id="download">DOWNLOAD ID CARD ↓</button><button class="secondary" id="share">SHARE IDENTITY ↗</button><button class="link" id="again">↻ RUN ANOTHER SCAN</button><p id="status"></p></div></div></section>
-<section id="multiverse"><p class="eyebrow">COMMUNITY DATA / LOCAL SESSION</p><h2>THE DEVELOPER <em>MULTIVERSE.</em></h2><p>Every class has a place. Explore the identities discovered on this device.</p><div class="stats"><article><small>SCANS COMPLETED</small><strong id="total">00</strong><small>ON THIS DEVICE</small></article><article><small>TOP CLASS</small><strong id="top">—</strong><small>MOST COMMON</small></article><article><small>CLASSES UNLOCKED</small><strong id="unlocked">0/6</strong><small>UNIQUE CLASSES</small></article></div><div id="distribution"></div><p class="privacy">ⓘ Counts are stored only in this browser. They are not shared or sent to a server.</p></section>
-<section class="closing"><p>[ SYSTEM MESSAGE ]</p><h2>THE MULTIVERSE NEEDS <em>YOUR CODE.</em></h2><p>Meet people. Exchange ideas. Build something that matters.</p><a class="primary" href="#home">BACK TO THE TOP ↑</a></section>
-</main><footer>DEVELOPER.exe × GDG ASSIUT <span>MADE FOR THE COMMUNITY, WITH CURIOSITY.</span> V 1.0.0</footer>
-<script src="app.js"></script></body></html>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-copy">
+      <p id="challenge" class="challenge hidden" role="status"></p>
+      <p class="eyebrow" data-i="heroEyebrow">GDG ASSIUT COMMUNITY EXPERIMENT / 001</p>
+      <h1 data-i="hero">YOUR CODE.<br><em>YOUR IDENTITY.</em></h1>
+      <p class="lead" data-i="intro">Every developer has a hidden class. Run the scan, reveal your powers, and find your place in the multiverse.</p>
+      <div class="cta-row">
+        <button type="button" class="primary" id="start" data-i="start">INITIALIZE SCAN ↗</button>
+        <a class="link" href="#multiverse" data-i="explore">EXPLORE THE MULTIVERSE ↓</a>
+      </div>
+      <p class="meta" data-i="meta">06 DEVELOPER CLASSES · ~60 SECONDS</p>
+    </div>
+    <div class="visual" aria-hidden="true">
+      <div class="orbit"></div>
+      <div class="core"><small>IDENTITY_SCAN · REC</small><strong>&lt;/&gt;</strong><span>DNA: UNKNOWN</span></div>
+      <b class="float f1">01001010</b>
+      <b class="float f2">CREATIVITY.exe</b>
+      <b class="float f3">while(alive){ learn(); }</b>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="hidden reveal" aria-live="polite">
+    <p class="eyebrow" data-i="quizEyebrow">SCAN PROTOCOL / PERSONALITY ANALYSIS</p>
+    <h2 data-i="quizTitle">LET'S READ YOUR <em>DNA.</em></h2>
+    <div id="quizUi">
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="6" aria-valuenow="1"><span id="progress"></span></div>
+      <p id="counter" class="counter"></p>
+      <h3 id="question" tabindex="-1"></h3>
+      <div id="answers" class="answers"></div>
+      <div class="quiz-foot">
+        <button type="button" id="back" class="secondary" data-i="back">← BACK</button>
+        <small class="hint" data-i="hint">TIP: PRESS 1–6 ON YOUR KEYBOARD</small>
+      </div>
+    </div>
+    <pre id="boot" class="boot hidden" aria-live="polite"></pre>
+  </section>
+
+  <!-- RESULT -->
+  <section id="result" class="hidden">
+    <p class="eyebrow" data-i="resEyebrow">SCAN COMPLETE / IDENTITY DECODED</p>
+    <h2 data-i="resTitle">IDENTITY <em>UNLOCKED.</em></h2>
+    <div class="result">
+      <article id="idcard" class="idcard">
+        <div class="card-top"><small data-i="cardBrand">DEVELOPER.exe · GDG ASSIUT</small><small class="rec">● REC</small></div>
+        <p class="class-label" data-i="cardLabel">YOUR DEVELOPER CLASS</p>
+        <div id="glyph" class="glyph" aria-hidden="true"></div>
+        <h3 id="className" class="class-name"></h3>
+        <p id="tagline" class="tagline"></p>
+        <p class="lvl"><span data-i="lvl">LVL.</span> <b id="level"></b> · <span id="code"></span></p>
+        <div class="lvlbar"><i id="lvlbar"></i></div>
+        <div class="dna">
+          <small data-i="dna">DNA MATRIX</small>
+          <div id="dnaBars" class="dna-bars"></div>
+        </div>
+        <div class="pw">
+          <div><small data-i="power">SPECIAL POWER</small><b id="power"></b></div>
+          <div><small data-i="weakness">WEAKNESS</small><b id="weakness"></b></div>
+        </div>
+        <small id="identity" class="idcode"></small>
+      </article>
+
+      <div class="result-side">
+        <h3 id="headline"></h3>
+        <p id="description"></p>
+        <ul id="traits" class="chips"></ul>
+        <div id="secondBox" class="note hidden"><small data-i="second">SECONDARY CLASS</small><b id="secondName"></b></div>
+        <div id="mateBox" class="note"><small data-i="mate">BEST TEAMMATE</small><b id="mateName"></b><p data-i="mateHint">Find someone with this class at the event and build something together.</p></div>
+        <div class="actions">
+          <button type="button" class="primary" id="share" data-i="share">SHARE IDENTITY ↗</button>
+          <button type="button" class="secondary" id="download" data-i="download">DOWNLOAD ID CARD ↓</button>
+          <button type="button" class="link" id="again" data-i="again">↻ RUN ANOTHER SCAN</button>
+        </div>
+        <p id="status" class="status-msg" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MULTIVERSE -->
+  <section id="multiverse" class="reveal">
+    <p class="eyebrow" data-i="multiEyebrow">COMMUNITY DATA / LOCAL SESSION</p>
+    <h2 data-i="multiTitle">THE DEVELOPER <em>MULTIVERSE.</em></h2>
+    <p class="lead" data-i="multiIntro">Every class has a place. Explore the identities discovered on this device.</p>
+    <div class="stats">
+      <article><small data-i="scans">SCANS COMPLETED</small><strong id="total">00</strong><small data-i="onDevice">ON THIS DEVICE</small></article>
+      <article><small data-i="topClass">TOP CLASS</small><strong id="top">—</strong><small data-i="mostCommon">MOST COMMON</small></article>
+      <article><small data-i="unlockedLbl">CLASSES UNLOCKED</small><strong id="unlocked">0/6</strong><small data-i="uniqueClasses">UNIQUE CLASSES</small></article>
+    </div>
+    <div id="distribution" class="distribution"></div>
+    <p class="privacy"><span data-i="privacy">ⓘ Counts are stored only in this browser. They are not shared or sent to a server.</span> <button type="button" class="link tiny" id="reset" data-i="reset">CLEAR LOCAL DATA</button></p>
+  </section>
+
+  <section class="closing reveal">
+    <p data-i="closingTag">[ SYSTEM MESSAGE ]</p>
+    <h2 data-i="closingTitle">THE MULTIVERSE NEEDS <em>YOUR CODE.</em></h2>
+    <p data-i="closingText">Meet people. Exchange ideas. Build something that matters.</p>
+    <a class="primary" href="#home" data-i="backTop">BACK TO THE TOP ↑</a>
+  </section>
+</main>
+
+<footer>
+  <span>DEVELOPER.exe × GDG ASSIUT</span>
+  <span class="made" data-i="footerMade">MADE FOR THE COMMUNITY, WITH CURIOSITY.</span>
+  <span><a href="https://github.com/AbdoOraby21/DEVELOPER.exe" target="_blank" rel="noopener">GITHUB ↗</a> · V 2.0.0</span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
