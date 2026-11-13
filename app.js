@@ -60,7 +60,7 @@
         back: "← BACK", hint: "TIP: PRESS 1–6 ON YOUR KEYBOARD",
         boot: ["> reading your answers ........ OK", "> decoding developer DNA ....... OK", "> class found. rendering ID card ..."],
         resEyebrow: "SCAN COMPLETE / IDENTITY DECODED",
-        resTitle: "IDENTITY <em>UNLOCKED.</em>",
+        resTitle: "IDENTITY <em>UNLOCKED.</em>", scanComplete: "SCAN COMPLETE", rare: "RARE SKILL",
         cardBrand: "DEVELOPER.exe · GDG ASSIUT", cardLabel: "YOUR DEVELOPER CLASS",
         lvl: "LVL.", power: "SPECIAL POWER", weakness: "WEAKNESS",
         dna: "DNA MATRIX", second: "SECONDARY CLASS", mate: "BEST TEAMMATE",
@@ -81,12 +81,12 @@
         cardTeammate: "BEST TEAMMATE"
       },
       profiles: {
-        bughunter:   { name: "THE BUG HUNTER", tag: "I FIND WHAT OTHERS OVERLOOK.", code: "DEBUGGER", power: "Spotting hidden problems", weak: "One more quick fix", headline: "You see the signal in the noise.", desc: "You stay curious, test assumptions, and dig until the system makes sense.", traits: ["Curious", "Precise", "Persistent"] },
-        architect:   { name: "THE ARCHITECT", tag: "I BUILD THE BIGGER PICTURE.", code: "SYSTEM DESIGNER", power: "Turning complexity into structure", weak: "Overthinking the blueprint", headline: "You think in systems.", desc: "You connect ideas, plan for scale, and build foundations that last.", traits: ["Strategic", "Structured", "Visionary"] },
-        creator:     { name: "THE CREATOR", tag: "I TURN IDEAS INTO EXPERIENCES.", code: "UI / UX MAKER", power: "Making technology feel human", weak: "Pixel-perfect perfectionism", headline: "You make ideas visible.", desc: "You blend curiosity and creativity to make products people love to use.", traits: ["Creative", "Empathetic", "Bold"] },
-        speedrunner: { name: "THE SPEEDRUNNER", tag: "SHIP IT. LEARN. REPEAT.", code: "RAPID BUILDER", power: "Moving from idea to prototype fast", weak: "Skipping the documentation", headline: "Momentum is your superpower.", desc: "You learn by building, iterate quickly, and turn blockers into momentum.", traits: ["Fast", "Adaptive", "Practical"] },
-        guardian:    { name: "THE GUARDIAN", tag: "I KEEP THE SYSTEM STRONG.", code: "SECURITY MINDED", power: "Thinking ahead about risks", weak: "Trusting absolutely nothing", headline: "You protect what matters.", desc: "You value reliability, safety, and details that keep products dependable.", traits: ["Careful", "Reliable", "Analytical"] },
-        researcher:  { name: "THE RESEARCHER", tag: "WHY? IS YOUR FAVORITE QUESTION.", code: "DEEP DIVER", power: "Finding patterns and new answers", weak: "Falling into another rabbit hole", headline: "You follow questions further.", desc: "You explore the unknown, learn deeply, and turn evidence into insight.", traits: ["Curious", "Patient", "Analytical"] }
+        bughunter:   { name: "THE BUG HUNTER", tag: "I FIND WHAT OTHERS OVERLOOK.", code: "DEBUGGER", power: "Finding bugs at 3 AM", weak: "It works on my machine", rare: "Google Stack Overflow" headline: "You see the signal in the noise.", desc: "You stay curious, test assumptions, and dig until the system makes sense.", traits: ["Curious", "Precise", "Persistent"] },
+        architect:   { name: "THE ARCHITECT", tag: "I BUILD THE BIGGER PICTURE.", code: "SYSTEM DESIGNER", power: "Turning chaos into architecture", weak: "Redesigning the blueprint again", rare: "Seeing the whole system at once" headline: "You think in systems.", desc: "You connect ideas, plan for scale, and build foundations that last.", traits: ["Strategic", "Structured", "Visionary"] },
+        creator:     { name: "THE CREATOR", tag: "I TURN IDEAS INTO EXPERIENCES.", code: "UI / UX MAKER", power: "Turning ideas into experiences", weak: "One more pixel-perfect tweak", rare: "Making a blank canvas feel alive" headline: "You make ideas visible.", desc: "You blend curiosity and creativity to make products people love to use.", traits: ["Creative", "Empathetic", "Bold"] },
+        speedrunner: { name: "THE SPEEDRUNNER", tag: "SHIP IT. LEARN. REPEAT.", code: "RAPID BUILDER", power: "Shipping ideas at lightning speed", weak: "Forgetting to write the docs", rare: "Building an MVP before the coffee cools" headline: "Momentum is your superpower.", desc: "You learn by building, iterate quickly, and turn blockers into momentum.", traits: ["Fast", "Adaptive", "Practical"] },
+        guardian:    { name: "THE GUARDIAN", tag: "I KEEP THE SYSTEM STRONG.", code: "SECURITY MINDED", power: "Spotting threats before they strike", weak: "Trusting absolutely nothing", rare: "Threat modeling in your sleep" headline: "You protect what matters.", desc: "You value reliability, safety, and details that keep products dependable.", traits: ["Careful", "Reliable", "Analytical"] },
+        researcher:  { name: "THE RESEARCHER", tag: "WHY? IS YOUR FAVORITE QUESTION.", code: "DEEP DIVER", power: "Finding answers hidden in the data", weak: "One more research rabbit hole", rare: "Turning 27 tabs into one insight" headline: "You follow questions further.", desc: "You explore the unknown, learn deeply, and turn evidence into insight.", traits: ["Curious", "Patient", "Analytical"] }
       },
       questions: [
         { q: "When your code breaks before a demo, you…", a: ["Trace the bug until you find the root cause", "Redesign the flow so it cannot happen again", "Find a clever workaround and polish the experience", "Patch it fast and keep the demo moving", "Check what could fail next and secure it", "Investigate why it happened in the first place"] },
@@ -116,7 +116,7 @@
         back: "رجوع →", hint: "نصيحة: اضغط من 1 إلى 6 على لوحة المفاتيح",
         boot: ["> قراءة إجاباتك ........ تم", "> فك شفرة الحمض النووي للمطوّر ........ تم", "> تم العثور على شخصيتك. جارٍ إنشاء البطاقة ..."],
         resEyebrow: "اكتمل الفحص / تم فك الهوية",
-        resTitle: "تم كشف <em>هويتك.</em>",
+        resTitle: "تم كشف <em>هويتك.</em>", scanComplete: "اكتمل الفحص", rare: "مهارة نادرة",
         cardBrand: "DEVELOPER.exe · GDG ASSIUT", cardLabel: "شخصيتك كمطوّر",
         lvl: "المستوى", power: "القوة الخاصة", weakness: "نقطة الضعف",
         dna: "مصفوفة الحمض النووي", second: "الشخصية الثانوية", mate: "أفضل زميل فريق",
@@ -137,12 +137,12 @@
         cardTeammate: "أفضل زميل فريق"
       },
       profiles: {
-        bughunter:   { name: "صائد الأخطاء", tag: "أرى ما يغفل عنه الآخرون.", code: "المُصحِّح", power: "اكتشاف المشاكل الخفية", weak: "إصلاح سريع آخر فقط", headline: "ترى الإشارة وسط الضجيج.", desc: "فضولي، تختبر الافتراضات، وتحفر حتى يصبح النظام مفهوماً.", traits: ["فضولي", "دقيق", "مثابر"] },
-        architect:   { name: "المعماري", tag: "أبني الصورة الكبيرة.", code: "مصمّم الأنظمة", power: "تحويل التعقيد إلى بنية واضحة", weak: "الإفراط في التفكير بالمخطط", headline: "تفكّر بمنطق الأنظمة.", desc: "تربط الأفكار، وتخطط للتوسع، وتبني أساسات تدوم.", traits: ["استراتيجي", "منظّم", "صاحب رؤية"] },
-        creator:     { name: "المبدع", tag: "أحوّل الأفكار إلى تجارب.", code: "صانع الواجهات", power: "جعل التقنية أقرب للإنسان", weak: "هوس الكمال في أدق التفاصيل", headline: "تجعل الأفكار مرئية.", desc: "تمزج الفضول بالإبداع لتصنع منتجات يحبها الناس.", traits: ["مبدع", "متعاطف", "جريء"] },
-        speedrunner: { name: "العدّاء السريع", tag: "أطلق، تعلّم، كرّر.", code: "البنّاء السريع", power: "الانتقال من الفكرة إلى نموذج أولي بسرعة", weak: "تخطّي التوثيق", headline: "الزخم هو قوتك الخارقة.", desc: "تتعلم بالبناء، وتكرر بسرعة، وتحوّل العوائق إلى زخم.", traits: ["سريع", "مرن", "عملي"] },
-        guardian:    { name: "الحارس", tag: "أحافظ على متانة النظام.", code: "عقلية أمنية", power: "التفكير المسبق في المخاطر", weak: "عدم الثقة بأي شيء إطلاقاً", headline: "تحمي ما يهم.", desc: "تقدّر الموثوقية والأمان والتفاصيل التي تجعل المنتجات يُعتمد عليها.", traits: ["حذر", "موثوق", "تحليلي"] },
-        researcher:  { name: "الباحث", tag: "«لماذا؟» سؤالي المفضل.", code: "الغوّاص العميق", power: "اكتشاف الأنماط وإجابات جديدة", weak: "السقوط في دوامة بحث أخرى", headline: "تلاحق الأسئلة أبعد من غيرك.", desc: "تستكشف المجهول، وتتعمق في التعلم، وتحوّل الأدلة إلى فهم.", traits: ["فضولي", "صبور", "تحليلي"] }
+        bughunter:   { name: "صائد الأخطاء", tag: "أرى ما يغفل عنه الآخرون.", code: "المُصحِّح", power: "اكتشاف الأخطاء في الثالثة صباحاً", weak: "شغّال عندي على جهازي!", rare: "البحث في Stack Overflow بلا نهاية" headline: "ترى الإشارة وسط الضجيج.", desc: "فضولي، تختبر الافتراضات، وتحفر حتى يصبح النظام مفهوماً.", traits: ["فضولي", "دقيق", "مثابر"] },
+        architect:   { name: "المعماري", tag: "أبني الصورة الكبيرة.", code: "مصمّم الأنظمة", power: "تحويل الفوضى إلى معمارية واضحة", weak: "إعادة تصميم المخطط للمرة العاشرة", rare: "رؤية النظام بالكامل من أول نظرة" headline: "تفكّر بمنطق الأنظمة.", desc: "تربط الأفكار، وتخطط للتوسع، وتبني أساسات تدوم.", traits: ["استراتيجي", "منظّم", "صاحب رؤية"] },
+        creator:     { name: "المبدع", tag: "أحوّل الأفكار إلى تجارب.", code: "صانع الواجهات", power: "تحويل الأفكار إلى تجارب", weak: "تعديل بكسل واحد للمرة المئة", rare: "تحويل صفحة فارغة إلى تجربة مبهرة" headline: "تجعل الأفكار مرئية.", desc: "تمزج الفضول بالإبداع لتصنع منتجات يحبها الناس.", traits: ["مبدع", "متعاطف", "جريء"] },
+        speedrunner: { name: "العدّاء السريع", tag: "أطلق، تعلّم، كرّر.", code: "البنّاء السريع", power: "تحويل الأفكار إلى منتجات بسرعة البرق", weak: "نسيان كتابة التوثيق", rare: "بناء نموذج أولي قبل أن تبرد القهوة" headline: "الزخم هو قوتك الخارقة.", desc: "تتعلم بالبناء، وتكرر بسرعة، وتحوّل العوائق إلى زخم.", traits: ["سريع", "مرن", "عملي"] },
+        guardian:    { name: "الحارس", tag: "أحافظ على متانة النظام.", code: "عقلية أمنية", power: "اكتشاف التهديدات قبل وقوعها", weak: "عدم الثقة بأي شيء إطلاقاً", rare: "تحليل التهديدات حتى أثناء النوم" headline: "تحمي ما يهم.", desc: "تقدّر الموثوقية والأمان والتفاصيل التي تجعل المنتجات يُعتمد عليها.", traits: ["حذر", "موثوق", "تحليلي"] },
+        researcher:  { name: "الباحث", tag: "«لماذا؟» سؤالي المفضل.", code: "الغوّاص العميق", power: "اكتشاف الإجابات المخفية في البيانات", weak: "علامة تبويب أخرى في رحلة البحث", rare: "تحويل 27 تبويباً إلى معلومة واحدة" headline: "تلاحق الأسئلة أبعد من غيرك.", desc: "تستكشف المجهول، وتتعمق في التعلم، وتحوّل الأدلة إلى فهم.", traits: ["فضولي", "صبور", "تحليلي"] }
       },
       questions: [
         { q: "عندما ينكسر الكود قبل العرض التجريبي، أنت…", a: ["تتتبع الخطأ حتى تصل إلى السبب الجذري", "تعيد تصميم المسار حتى لا يتكرر", "تجد حلاً ذكياً وتصقل التجربة", "تصلحه بسرعة وتكمل العرض", "تفحص ما قد يفشل بعده وتؤمّنه", "تبحث لماذا حدث ذلك أصلاً"] },
@@ -317,6 +317,25 @@
     }
   }
 
+  function profileArtSvg(id) {
+    const shapes = {
+      bughunter: '<circle cx="56" cy="53" r="27"/><path d="M76 73l30 30M45 42l22 22M67 42L45 64M56 38v31M39 53h34"/><path d="M26 22l-8-8M88 24l9-9"/>',
+      architect: '<path d="M16 105V43L64 15l48 28v62M32 105V57h64v48M44 57V43h40v14M44 75h14v14H44zM70 75h14v14H70zM56 105V89h16v16"/>',
+      creator: '<path d="M22 87C8 65 24 31 52 23c29-8 57 9 58 34 1 19-12 34-31 40l-39 10 8-17zM24 105l66-66"/><circle cx="47" cy="47" r="5"/><circle cx="70" cy="39" r="5"/><circle cx="87" cy="56" r="5"/>',
+      speedrunner: '<path d="M73 10L29 70h31l-8 48 48-68H67zM15 35h19M9 56h19"/>',
+      guardian: '<path d="M64 12l45 17v30c0 29-18 48-45 61C37 107 19 88 19 59V29zM42 63l15 15 30-34"/>',
+      researcher: '<path d="M15 27q26-12 49 5v77q-23-17-49-5zM113 27q-26-12-49 5v77q23-17 49-5zM37 48h14M37 65h14M77 48h14M77 65h14"/><circle cx="96" cy="18" r="11"/>'
+    };
+    return '<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><circle cx="64" cy="64" r="59" fill="currentColor" opacity=".08"/><circle cx="64" cy="64" r="59" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"/><g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">'+shapes[id]+'</g></svg>';
+  }
+  async function paintProfileArt(ctx, id, x, y, size, color) {
+    const svg = profileArtSvg(id).replace(/currentColor/g, color);
+    const img = new Image();
+    img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+    await new Promise(resolve => { img.onload = resolve; img.onerror = resolve; });
+    if (img.naturalWidth) ctx.drawImage(img, x, y, size, size);
+  }
+
   function renderResult(fresh = false) {
     const r = state.result;
     if (!r) return;
@@ -324,6 +343,9 @@
 
     $("#result").style.setProperty("--accent", r.primary.color);
     $("#glyph").textContent = r.primary.glyph;
+    $("#profileArt").innerHTML = profileArtSvg(r.primary.id);
+    $("#profileArt").style.setProperty("--accent", r.primary.color);
+    $("#rareSkill").textContent = p.rare;
     $("#tagline").textContent = p.tag;
     $("#code").textContent = p.code;
     $("#level").textContent = r.primary.level;
@@ -457,6 +479,8 @@
     x.fillStyle = "#8b9b90"; x.font = "400 24px " + FONT;
     x.fillText(t.cardLabel, ax, 200);
 
+    await paintProfileArt(x, r.primary.id, W - M - 230, 220, 205, accent);
+
     // glyph
     x.save();
     x.shadowColor = accent; x.shadowBlur = 50; x.fillStyle = accent;
@@ -501,8 +525,13 @@
       y += 6;
     });
 
+    y += 44;
+    x.fillStyle = accent; x.font = "600 22px " + FONT; x.fillText(t.rare, ax, y);
+    x.fillStyle = "#e8f4eb"; x.font = "600 30px " + FONT;
+    y = wrap(x, p.rare, ax, y + 42, W - 2 * M, 40);
+
     // power / weakness
-    y += 56;
+    y += 28;
     x.strokeStyle = "rgba(255,255,255,0.14)"; x.lineWidth = 2;
     x.beginPath(); x.moveTo(M, y - 30); x.lineTo(W - M, y - 30); x.stroke();
     x.fillStyle = "#8b9b90"; x.font = "400 22px " + FONT; x.fillText(t.power, ax, y);
