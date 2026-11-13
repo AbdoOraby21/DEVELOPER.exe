@@ -65,7 +65,7 @@
         lvl: "LVL.", power: "SPECIAL POWER", weakness: "WEAKNESS",
         dna: "DNA MATRIX", second: "SECONDARY CLASS", mate: "BEST TEAMMATE",
         mateHint: "Find someone with this class at the event and build something together.",
-        share: "SHARE IDENTITY ↗", download: "DOWNLOAD ID CARD ↓", again: "↻ RUN ANOTHER SCAN",
+        share: "SHARE IDENTITY ↗", linkedin: "POST ON LINKEDIN ↗", download: "DOWNLOAD ID CARD ↓", again: "↻ RUN ANOTHER SCAN",
         shareText: "I unlocked my developer identity on DEVELOPER.exe: {name}. What's your class?",
         copied: "Link copied — paste it anywhere!", saved: "ID card saved!", cancelled: "Share cancelled.", preparing: "Preparing your card…",
         multiEyebrow: "COMMUNITY DATA / LOCAL SESSION",
@@ -121,7 +121,7 @@
         lvl: "المستوى", power: "القوة الخاصة", weakness: "نقطة الضعف",
         dna: "مصفوفة الحمض النووي", second: "الشخصية الثانوية", mate: "أفضل زميل فريق",
         mateHint: "ابحث عن شخص بهذه الشخصية في الفعالية وابنيا شيئاً معاً.",
-        share: "شارك هويتك ↗", download: "حمّل البطاقة ↓", again: "↻ فحص جديد",
+        share: "شارك هويتك ↗", linkedin: "انشر على LinkedIn ↗", download: "حمّل البطاقة ↓", again: "↻ فحص جديد",
         shareText: "اكتشفت هويتي كمطوّر على DEVELOPER.exe: {name}. ما هي شخصيتك؟",
         copied: "تم نسخ الرابط — الصقه في أي مكان!", saved: "تم حفظ البطاقة!", cancelled: "تم إلغاء المشاركة.", preparing: "جارٍ تجهيز بطاقتك…",
         multiEyebrow: "بيانات المجتمع / الجلسة المحلية",
@@ -567,6 +567,65 @@
     } catch (e) {
       if (e && e.name === "AbortError") flash(ui().cancelled);
       else { try { await navigator.clipboard.writeText(text + " " + url); flash(ui().copied); } catch { flash(url); } }
+    }
+  });
+
+  // LinkedIn: prepare a professional bilingual post, download the identity card,
+  // copy the post text, then open LinkedIn's official share dialog.
+  $("#linkedin").addEventListener("click", async () => {
+    if (!state.result) return;
+    const popup = window.open("about:blank", "_blank");
+    const id = state.result.primary.id;
+    const profile = prof(id);
+    const url = baseUrl() + "?c=" + encodeURIComponent(id);
+    const post = lang === "ar"
+      ? `يسعدني مشاركة هويتي كمطوّر بعد تجربة DEVELOPER.exe من مجتمع GDG Assiut! 🚀
+
+شخصيتي البرمجية: ${profile.name}
+${profile.desc}
+
+كل مطوّر لديه طريقة مختلفة في التفكير والتعلّم وبناء الحلول، ومتحمس للتواصل مع مجتمع المطورين في أسيوط وتبادل الخبرات والعمل على أفكار ومشاريع جديدة.
+
+اكتشف شخصيتك وشارك بطاقتك:
+${url}
+
+شكرًا لمجتمع @GDG Assiut على خلق مساحة تجمع المطورين وتدعم التعلّم والمشاركة.
+
+#GDGAssiut #DEVELOPERexe #Developers #TechCommunity #Assiut`
+      : `Excited to share my developer identity after taking DEVELOPER.exe by the GDG Assiut community! 🚀
+
+My developer class: ${profile.name}
+${profile.desc}
+
+Every developer has a unique way of thinking, learning, and building. I'm looking forward to connecting with fellow developers in Assiut, exchanging knowledge, and building meaningful projects together.
+
+Discover your identity:
+${url}
+
+Big thanks to @GDG Assiut for bringing the local tech community together and creating space for learning and collaboration.
+
+#GDGAssiut #DEVELOPERexe #Developers #TechCommunity #Assiut`;
+    try {
+      flash(lang === "ar" ? "جارٍ تجهيز البطاقة ونسخ البوست…" : "Preparing your card and copying the post…");
+      const blob = await toBlob(await drawCard());
+      if (!blob) throw new Error("Could not render card");
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "developer-identity-" + id + ".png";
+      document.body.append(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+      await navigator.clipboard.writeText(post);
+      const shareUrl = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(url);
+      if (popup) popup.location.href = shareUrl;
+      else window.location.href = shareUrl;
+      flash(lang === "ar"
+        ? "تم نسخ البوست وتنزيل البطاقة. الصق البوست وأرفق صورة البطاقة في LinkedIn."
+        : "Post copied and card downloaded. Paste the post and attach your card image on LinkedIn.");
+    } catch (err) {
+      if (popup) popup.close();
+      flash(lang === "ar"
+        ? "تعذّر النسخ تلقائيًا. استخدم زر تحميل البطاقة ثم شاركها يدويًا."
+        : "Clipboard access failed. Download the card and share it manually.");
     }
   });
 
