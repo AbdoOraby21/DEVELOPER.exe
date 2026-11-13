@@ -259,3 +259,15 @@ footer a:hover { color: var(--green); }
   .actions .primary, .actions .secondary { flex: 1 1 100%; text-align: center; }
   .hero h1 { font-size: 44px; }
 }
+
+/* SYSTEM SCAN / illustrated identity */
+.scan-complete { color:var(--accent,#22c55e); font:700 .78rem "IBM Plex Mono",monospace; letter-spacing:.22em; margin:-.5rem 0 1.5rem; }
+.scan-stamp { display:flex; justify-content:space-between; gap:1rem; color:var(--accent); font:600 .66rem "IBM Plex Mono",monospace; letter-spacing:.12em; border-bottom:1px solid color-mix(in srgb,var(--accent) 45%,transparent); padding-bottom:.8rem; }
+.scan-stamp span { color:#ff5d68; }
+.profile-art { width:min(190px,42vw); aspect-ratio:1; margin:1.1rem auto .4rem; color:var(--accent); filter:drop-shadow(0 0 22px color-mix(in srgb,var(--accent) 50%,transparent)); animation:profilePulse 3.8s ease-in-out infinite; }
+.profile-art svg { width:100%; height:100%; display:block; }
+.rare-skill { display:grid; gap:.45rem; margin:1.2rem 0; padding:.9rem 1rem; border:1px solid color-mix(in srgb,var(--accent) 50%,transparent); background:color-mix(in srgb,var(--accent) 8%,transparent); }
+.rare-skill small { color:var(--accent); font:600 .68rem "IBM Plex Mono",monospace; letter-spacing:.14em; }
+.rare-skill b { color:#e8f4eb; }
+@keyframes profilePulse { 0%,100% { transform:translateY(0) scale(1); } 50% { transform:translateY(-5px) scale(1.025); } }
+@media (prefers-reduced-motion:reduce) { .profile-art { animation:none; } }
